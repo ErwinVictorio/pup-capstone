@@ -1,22 +1,23 @@
 import React from "react";
-import { 
-    Sidebar, 
-    SidebarContent, 
-    SidebarGroup, 
-    SidebarGroupContent, 
-    SidebarGroupLabel, 
-    SidebarMenu, 
-    SidebarMenuButton, 
-    SidebarMenuItem 
+import {
+    Sidebar,
+    SidebarContent,
+    SidebarGroup,
+    SidebarGroupContent,
+    SidebarGroupLabel,
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem
 } from "@/components/ui/sidebar";
 import { Link } from "@inertiajs/react";
-import { LayoutDashboard, Users, Settings } from "lucide-react";
+import { LayoutDashboard, Users, Settings, File, Calendar } from "lucide-react";
 
 // Define your navigation links
 const items = [
     { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
-    { title: "Employees", url: "/employees", icon: Users },
-    { title: "Settings", url: "/settings", icon: Settings },
+    { title: "Accreditation Documents", url: "#", icon: Users },
+    { title: "File Submission", url: "#", icon: File },
+    { title: "Events", url: "#", icon: Calendar },
 ];
 
 export function AppSidebar() {
@@ -24,7 +25,7 @@ export function AppSidebar() {
         <Sidebar>
             <SidebarContent>
                 <SidebarGroup>
-                    <SidebarGroupLabel>Application</SidebarGroupLabel>
+                    <SidebarGroupLabel>Dashboard</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
                             {items.map((item) => (

@@ -3,7 +3,7 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "../app-sidebar";
 
 
-export default function AuthenticatedLayout({ children }) {
+export default function DashboardLayout({ children }) {
     return (
         <SidebarProvider>
             <div className="flex min-h-screen w-full">
