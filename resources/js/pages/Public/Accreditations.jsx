@@ -13,7 +13,7 @@ export default function Accreditations() {
 
     return (
         <PublicLayout title="Accreditations">
-            <HeroBanner title="Accreditation" image="/qac-assets/accreditations-page.png" />
+            <HeroBanner title="Accreditation" />
 
             <section className="mx-auto max-w-6xl px-6 py-14 text-center sm:px-8 sm:py-16">
                 <Reveal>

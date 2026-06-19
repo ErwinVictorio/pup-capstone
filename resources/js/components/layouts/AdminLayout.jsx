@@ -31,7 +31,7 @@ function isActive(href) {
 
 function NavLinks({ onNavigate }) {
     return (
-        <nav className="flex flex-1 flex-col gap-3 px-6 py-7 md:px-8 md:py-9">
+        <nav className="flex flex-1 flex-col gap-3 px-7 py-8">
             {navItems.map((item) => {
                 const active = isActive(item.href);
                 const Icon = item.icon;
@@ -42,10 +42,10 @@ function NavLinks({ onNavigate }) {
                         href={item.href}
                         onClick={onNavigate}
                         className={`relative flex min-h-12 items-center gap-4 rounded-[8px] px-3 text-[16px] font-medium leading-tight text-[#980000] transition ${
-                            active ? "bg-[#fff0f0] font-black" : "hover:bg-[#fff7f7]"
+                            active ? "bg-white font-black" : "hover:bg-[#fff7f7]"
                         }`}
                     >
-                        {active && <span className="absolute -left-6 h-10 w-1 bg-[#980000] md:-left-8" />}
+                        {active && <span className="absolute -left-7 h-10 w-1 bg-[#980000]" />}
                         <Icon className="size-6 shrink-0 stroke-[1.7]" />
                         <span>{item.title}</span>
                     </Link>
@@ -64,7 +64,7 @@ export default function AdminLayout({ children, title = "QAC Dashboard" }) {
         <div className="min-h-screen bg-[#f5f5f5] text-[#171717]">
             <Head title={title} />
 
-            <header className="fixed inset-x-0 top-0 z-30 flex h-[72px] items-center justify-between bg-[#980000] px-4 text-white shadow-sm sm:px-6">
+            <header className="fixed inset-x-0 top-0 z-30 flex h-[59px] items-center justify-between bg-[#980000] px-4 text-white shadow-sm sm:px-6">
                 <div className="flex min-w-0 items-center gap-3">
                     <button
                         type="button"
@@ -98,7 +98,7 @@ export default function AdminLayout({ children, title = "QAC Dashboard" }) {
                 </div>
             </header>
 
-            <aside className="fixed bottom-0 left-0 top-[72px] z-20 hidden w-[300px] flex-col border-r border-[#e4e4e4] bg-white md:flex">
+            <aside className="fixed bottom-0 left-0 top-[59px] z-20 hidden w-[250px] flex-col border-r border-[#e4e4e4] bg-white md:flex">
                 <NavLinks />
                 <Link href="/logout" method="post" as="button" className="mb-12 ml-8 flex items-center gap-5 text-[17px] text-[#980000]">
                     <LogOut className="size-8 stroke-[1.6]" />
@@ -125,7 +125,7 @@ export default function AdminLayout({ children, title = "QAC Dashboard" }) {
                             transition={{ duration: 0.25, ease: "easeOut" }}
                             className="fixed bottom-0 left-0 top-0 z-50 flex w-[min(86vw,320px)] flex-col bg-white shadow-2xl md:hidden"
                         >
-                            <div className="flex h-[72px] items-center justify-between bg-[#980000] px-4 text-white">
+                            <div className="flex h-[59px] items-center justify-between bg-[#980000] px-4 text-white">
                                 <QacLogo compact light />
                                 <button type="button" aria-label="Close menu" onClick={() => setOpen(false)} className="grid size-10 place-items-center rounded-[8px] border border-white/30">
                                     <X className="size-6" />
@@ -141,8 +141,8 @@ export default function AdminLayout({ children, title = "QAC Dashboard" }) {
                 )}
             </AnimatePresence>
 
-            <main className="min-h-screen pt-[72px] md:pl-[300px]">
-                <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, ease: "easeOut" }} className="px-4 py-6 sm:px-6 lg:px-10 xl:px-16">
+            <main className="min-h-screen pt-[59px] md:pl-[250px]">
+                <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, ease: "easeOut" }} className="px-4 py-8 sm:px-6 lg:px-10 xl:px-14">
                     {children}
                 </motion.div>
             </main>

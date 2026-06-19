@@ -7,7 +7,7 @@ export default function GovernmentRecognitions() {
 
     return (
         <PublicLayout title="Government Recognitions">
-            <HeroBanner title="Government Recognition" image="/qac-assets/gov-recognitions-page.png" />
+            <HeroBanner title="Government Recognition" />
             <section className="mx-auto max-w-6xl px-6 py-14 sm:px-8 sm:py-16">
                 <Reveal>
                     <h1 className="text-center text-3xl font-black text-[#980000] sm:text-4xl">Government Recognitions</h1>

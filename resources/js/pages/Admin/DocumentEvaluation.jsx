@@ -52,9 +52,9 @@ export default function DocumentEvaluation() {
 
     return (
         <AdminLayout title="Document Evaluation">
-            <Reveal className="mx-auto max-w-7xl rounded-[18px] bg-white p-5 shadow-sm sm:p-8">
+            <Reveal className="mx-auto max-w-[1084px] rounded-[20px] bg-white p-5 shadow-sm sm:p-8 lg:mt-6">
                 <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-                    <h1 className="text-3xl font-black">Document Evaluation</h1>
+                    <h1 className="text-2xl font-black">Document Evaluation</h1>
                     <button type="button" className="flex items-center gap-2 text-left text-sm font-semibold text-[#980000]">
                         <Download className="size-4 shrink-0" />
                         Download Accreditation Visit Evaluation Form
@@ -88,7 +88,7 @@ export default function DocumentEvaluation() {
                 <div className="rounded-[8px] border border-[#ddd] p-4 lg:hidden">
                     <div className="font-black text-[#980000]">Bachelor of Science in Information Technology</div>
                     <div className="mt-2 grid gap-1 text-sm text-[#666]">
-                        <span>Sta. Mesa, Manila · CCIS</span>
+                        <span>Sta. Mesa, Manila - CCIS</span>
                         <span>Level IV</span>
                         <span>Accreditor: Dela Cruz, Pedro Juan B.</span>
                         <span className="italic text-[#b5b5b5]">Score not yet released</span>

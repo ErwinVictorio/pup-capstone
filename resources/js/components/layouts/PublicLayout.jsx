@@ -24,17 +24,17 @@ export default function PublicLayout({ children, title = "PUP QAC" }) {
     return (
         <div className="min-h-screen bg-white text-[#111]">
             <Head title={title} />
-            <header className="sticky top-0 z-30 flex min-h-[72px] items-center justify-between bg-white px-4 shadow-sm sm:px-6 lg:px-8">
+            <header className="sticky top-0 z-30 flex h-[58px] items-center justify-between bg-white px-4 shadow-sm sm:px-6 lg:px-8">
                 <Link href="/">
                     <QacLogo />
                 </Link>
 
-                <nav className="hidden items-center gap-6 text-base text-[#9a3838] xl:gap-8 xl:text-lg lg:flex">
+                <nav className="hidden h-full items-center gap-4 text-[15px] text-[#9a3838] xl:gap-7 lg:flex">
                     {links.map((item) => (
                         <Link
                             key={item.href}
                             href={item.href}
-                            className={`flex min-w-24 items-center justify-center gap-2 rounded-[6px] px-4 py-3 transition ${
+                            className={`flex min-w-24 items-center justify-center gap-2 rounded-[5px] px-4 py-2.5 transition ${
                                 active(item.href) ? "bg-[#980000] font-bold text-white" : "hover:bg-[#fff3f3] hover:text-[#980000]"
                             }`}
                         >
@@ -43,7 +43,7 @@ export default function PublicLayout({ children, title = "PUP QAC" }) {
                         </Link>
                     ))}
                     <Link href="/login" className="text-black transition hover:text-[#980000]">
-                        <UserCircle className="size-10 stroke-[2.2]" />
+                        <UserCircle className="size-9 stroke-[2.2]" />
                     </Link>
                 </nav>
 
@@ -64,7 +64,7 @@ export default function PublicLayout({ children, title = "PUP QAC" }) {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -12 }}
                         transition={{ duration: 0.2 }}
-                        className="sticky top-[72px] z-20 border-b border-[#e8e8e8] bg-white px-4 py-4 shadow-sm lg:hidden"
+                        className="sticky top-[58px] z-20 border-b border-[#e8e8e8] bg-white px-4 py-4 shadow-sm lg:hidden"
                     >
                         <div className="grid gap-2">
                             {links.map((item) => (
@@ -93,9 +93,7 @@ export default function PublicLayout({ children, title = "PUP QAC" }) {
             <footer className="bg-[#980000] px-6 py-12 text-white sm:px-8">
                 <Reveal className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_1.2fr_1fr_1fr]">
                     <div>
-                        <div className="mb-4 grid size-28 place-items-center rounded-full bg-white text-xl font-black text-[#980000] sm:size-36 sm:text-2xl">
-                            GOVPH
-                        </div>
+                        <Seal label="PH" />
                         <h3 className="font-serif text-xl font-bold">Republic of the Philippines</h3>
                         <p className="mt-3 max-w-xs text-sm text-white/80">All content is in the public domain unless otherwise stated.</p>
                     </div>
@@ -120,9 +118,7 @@ export default function PublicLayout({ children, title = "PUP QAC" }) {
                         </div>
                     </div>
                     <div className="space-y-8">
-                        <div className="grid size-28 place-items-center rounded-full border-4 border-white text-center text-sm font-black">
-                            PUP
-                        </div>
+                        <Seal label="PUP" compact />
                         <div>
                             <div className="flex items-center gap-3 font-black text-[#ffd21f]">
                                 <Mail className="size-5 text-white" /> EMAIL
@@ -138,30 +134,39 @@ export default function PublicLayout({ children, title = "PUP QAC" }) {
                     </div>
                 </Reveal>
                 <div className="mt-10 text-center text-sm font-semibold text-white/80">
-                    © 2024 Polytechnic University of the Philippines
+                    Copyright 2024 Polytechnic University of the Philippines
                 </div>
             </footer>
         </div>
     );
 }
 
-export function HeroBanner({ title, image = "/qac-assets/landing-page.png" }) {
+export function HeroBanner({ title, image = "/qac-assets/hero_image.jpeg" }) {
     return (
         <section
-            className="relative grid min-h-[360px] place-items-center overflow-hidden bg-[#111] px-4 text-center text-white sm:min-h-[430px]"
+            className="relative grid min-h-[330px] place-items-center overflow-hidden bg-[#111] px-4 text-center text-white sm:min-h-[395px]"
             style={{
-                backgroundImage: `linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,.42)), url("${image}")`,
+                backgroundImage: `linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("${image}")`,
                 backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundPosition: "center top",
             }}
         >
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease: "easeOut" }}>
-                <div className="mx-auto mb-5 grid size-16 place-items-center rounded-full bg-[#980000] text-lg font-black text-[#ffd21f]">
-                    PUP
-                </div>
-                <div className="font-serif text-xl uppercase tracking-normal sm:text-3xl">Polytechnic University of the Philippines</div>
-                <h1 className="mt-2 text-4xl font-black uppercase tracking-normal sm:text-6xl md:text-8xl">{title}</h1>
+                <div className="font-serif text-xl uppercase tracking-normal drop-shadow sm:text-3xl">Polytechnic University of the Philippines</div>
+                <h1 className="mt-1 text-5xl font-black uppercase tracking-normal drop-shadow-lg sm:text-7xl md:text-8xl">{title}</h1>
             </motion.div>
         </section>
+    );
+}
+
+function Seal({ label, compact = false }) {
+    return (
+        <div className={`mb-5 grid place-items-center rounded-full bg-white text-[#980000] shadow-inner ${compact ? "size-24" : "size-32 sm:size-36"}`}>
+            <div className="grid size-[78%] place-items-center rounded-full border-4 border-[#ffd21f] bg-white">
+                <div className="grid size-[68%] place-items-center rounded-full bg-[#980000] text-center text-sm font-black text-[#ffd21f]">
+                    {label}
+                </div>
+            </div>
+        </div>
     );
 }

@@ -7,8 +7,8 @@ import SummaryCard from "../../components/layouts/SummaryCard";
 export default function Dashboard() {
     return (
         <AdminLayout title="QAC Dashboard">
-            <div className="mx-auto max-w-7xl space-y-6 sm:space-y-8">
-                <Reveal as="section" className="rounded-[8px] bg-white p-5 shadow-sm sm:p-8">
+            <div className="mx-auto max-w-[1084px] space-y-6 sm:space-y-8 lg:mt-6">
+                <Reveal as="section" className="rounded-[20px] bg-white p-5 shadow-sm sm:p-8">
                     <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
                         <div>
                             <p className="text-sm font-bold uppercase tracking-normal text-[#980000]">Quality Assurance Center</p>
@@ -39,7 +39,7 @@ export default function Dashboard() {
                 </Stagger>
 
                 <section className="grid gap-6 xl:grid-cols-[1.1fr_.9fr]">
-                    <Reveal className="rounded-[8px] bg-white p-5 shadow-sm sm:p-7">
+                    <Reveal className="rounded-[20px] bg-white p-5 shadow-sm sm:p-7">
                         <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                             <h2 className="text-2xl font-black">Program Accreditation Status</h2>
                             <span className="text-sm font-semibold text-[#980000]">As of March 2026</span>
@@ -60,7 +60,7 @@ export default function Dashboard() {
                         </Stagger>
                     </Reveal>
 
-                    <Reveal className="rounded-[8px] bg-white p-5 shadow-sm sm:p-7">
+                    <Reveal className="rounded-[20px] bg-white p-5 shadow-sm sm:p-7">
                         <h2 className="text-2xl font-black">Upcoming Events</h2>
                         <div className="mt-6 space-y-4">
                             {[

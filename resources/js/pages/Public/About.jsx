@@ -14,7 +14,7 @@ const staff = [
 export default function About() {
     return (
         <PublicLayout title="About PUP QAC">
-            <HeroBanner title="About" image="/qac-assets/about-page.png" />
+            <HeroBanner title="About" />
 
             <Reveal as="section" className="mx-auto max-w-6xl px-6 py-14 sm:px-8 sm:py-16">
                 <div className="grid gap-10 lg:grid-cols-[280px_1fr]">

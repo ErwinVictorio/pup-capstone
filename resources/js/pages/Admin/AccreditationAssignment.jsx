@@ -22,10 +22,10 @@ export default function AccreditationAssignment() {
 
     return (
         <AdminLayout title="Accreditation Assignment">
-            <Reveal className="mx-auto max-w-7xl rounded-[18px] bg-white p-5 shadow-sm sm:p-8">
+            <Reveal className="mx-auto max-w-[1084px] rounded-[20px] bg-white p-5 shadow-sm sm:p-8 lg:mt-6">
                 <div className="mb-7 flex flex-col justify-between gap-5 lg:flex-row lg:items-center">
                     <div>
-                        <h1 className="text-3xl font-black">Accreditation Assignment</h1>
+                        <h1 className="text-2xl font-black">Accreditation Assignment</h1>
                         <p className="mt-2 text-[#707070]">Review, accept, or reject program accreditation assignments.</p>
                     </div>
                     <div className="flex h-12 w-full items-center gap-3 rounded-[8px] border border-[#d5d5d5] px-4 sm:max-w-sm">
@@ -68,7 +68,7 @@ export default function AccreditationAssignment() {
                             <div className="flex items-start justify-between gap-3">
                                 <div>
                                     <div className="font-black text-[#980000]">{program}</div>
-                                    <div className="mt-1 text-sm text-[#707070]">{campus} · {college}</div>
+                                    <div className="mt-1 text-sm text-[#707070]">{campus} - {college}</div>
                                 </div>
                                 <span className="rounded-full bg-[#fff0f0] px-3 py-1 text-xs font-black text-[#980000]">{status}</span>
                             </div>

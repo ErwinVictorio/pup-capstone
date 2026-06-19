@@ -55,7 +55,7 @@ export default function Profile({ profile }) {
 
     return (
         <AdminLayout title="Profile">
-            <div className="mx-auto grid max-w-7xl gap-6 xl:grid-cols-[.8fr_1.2fr]">
+            <div className="mx-auto grid max-w-[1084px] gap-6 lg:mt-6 xl:grid-cols-[.8fr_1.2fr]">
                 <Reveal>
                     <Card className="rounded-[12px]">
                         <CardHeader>
